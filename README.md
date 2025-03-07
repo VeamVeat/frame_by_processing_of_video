@@ -55,3 +55,8 @@ pip install -r requirements.txt
     5000 миллисекунд)
 
 ## Пример двух совпавших кадров
+![20250307140023_1 jpg](https://github.com/user-attachments/assets/02e8f999-1b29-47df-8999-96bb42796e8f)
+
+![20250307140157_1 jpg](https://github.com/user-attachments/assets/117c4290-c0b9-405e-b9f5-768c045b6d94)
+
+
