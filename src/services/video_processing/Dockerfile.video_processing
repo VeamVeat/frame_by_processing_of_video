@@ -1,0 +1,36 @@
+FROM ubuntu:20.04
+
+ENV TZ=Europe/Moscow
+
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata && \
+    ln -fs /usr/share/zoneinfo/$TZ /etc/localtime && \
+    dpkg-reconfigure -f noninteractive tzdata
+
+RUN apt-get update && apt-get install -y \
+    python3-pip \
+    libopencv-dev \
+    python3-opencv
+
+# Создаем рабочую директорию
+WORKDIR /app
+
+# Копируем исходный код
+COPY services/video_processing/requirements.txt /app/requirements.txt
+
+# Устанавливаем зависимости
+RUN pip install --no-cache-dir -r /app/requirements.txt
+RUN pip3 install python-dotenv
+
+COPY services/video_processing/main.py /app/main.py
+COPY services/video_processing/minio_service.py /app/minio_service.py
+COPY services/logger.py /app/logger.py
+COPY services/.env /app/.env
+COPY services/video_processing/processing_rtsp_stream.py /app/processing_rtsp_stream.py
+COPY services/video_processing/video_file_comparison.py /app/video_file_comparison.py
+COPY services/video_processing/search_same_moment.py /app/search_same_moment.py
+
+COPY services/video_processing/video_processing.log /app/logs/video_processing.log
+
+COPY files/videos/video1_30fps.mp4 /app/video1_30fps.mp4
+COPY files/videos/video2_15fps.mp4 /app/video2_15fps.mp4

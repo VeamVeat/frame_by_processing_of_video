@@ -1,0 +1,35 @@
+FROM ubuntu:20.04
+
+ENV TZ=Europe/Moscow
+
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata && \
+    ln -fs /usr/share/zoneinfo/$TZ /etc/localtime && \
+    dpkg-reconfigure -f noninteractive tzdata
+
+RUN apt-get update && apt-get install -y \
+    gstreamer1.0-tools \
+    gstreamer1.0-plugins-good \
+    gstreamer1.0-plugins-bad \
+    gstreamer1.0-plugins-ugly \
+    gstreamer1.0-libav \
+    libgstrtspserver-1.0-dev \
+    python3-pip \
+    python3-dev \
+    libcairo2-dev \
+    libgirepository1.0-dev \
+    pkg-config
+
+WORKDIR /app
+
+RUN pip3 install pygobject
+RUN pip3 install pydantic
+RUN pip3 install pydantic-settings
+RUN pip3 install python-dotenv
+
+COPY services/rtsp/main.py /app/main.py
+COPY services/.env /app/.env
+COPY services/logger.py /app/logger.py
+COPY services/rtsp/video_processing.log /app/logs/video_processing.log
+COPY files/videos/video1_30fps.mp4 /app/video1_30fps.mp4
+COPY files/videos/video2_15fps.mp4 /app/video2_15fps.mp4

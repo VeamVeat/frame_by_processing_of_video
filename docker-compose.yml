@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  minio:
+    image: minio/minio:latest
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    volumes:
+      - minio_data:/data
+    command: server /data --console-address ":9001"
+    networks:
+      - app-network
+
+  rtsp-server:
+    build:
+      context: src/
+      dockerfile: ./services/rtsp/Dockerfile.rtsp
+    ports:
+      - "8554:8554"
+      - "8888:8888"
+    command: "python3 main.py"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://0.0.0.0:8888/video1" ]
+      interval: 5s
+      timeout: 1s
+      retries: 10
+    depends_on:
+      - minio
+    networks:
+      - app-network
+
+  video-processor:
+    build:
+      context: src/
+      dockerfile: ./services/video_processing/Dockerfile.video_processing
+    volumes:
+      - ./snapshots_video_file_comparison:/app/snapshots_video_file_comparison
+      - ./snapshots_search_same_moment:/app/snapshots_search_same_moment
+      - ./logs:/app/logs
+    command: "python3 main.py"
+    depends_on:
+      - minio
+      - rtsp-server
+    networks:
+      - app-network
+
+volumes:
+  minio_data:
+  snapshots_video_file_comparison:
+  snapshots_search_same_moment:
+  logs:
+
+networks:
+  app-network:
+    driver: bridge

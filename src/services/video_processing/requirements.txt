@@ -1,0 +1,5 @@
+minio>=7.0.0
+opencv-python-headless>=4.5.5
+numpy>=1.21.0
+pydantic==2.10.6
+pydantic-settings==2.8.1

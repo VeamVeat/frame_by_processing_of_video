@@ -1,0 +1,11 @@
+2025-03-11 09:53:54 - urllib3.connectionpool - WARNING - Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0xffffa95bce20>: Failed to establish a new connection: [Errno 111] Connection refused')': /video1-bucket?location=
+2025-03-11 09:53:55 - urllib3.connectionpool - WARNING - Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0xffff96091100>: Failed to establish a new connection: [Errno 111] Connection refused')': /video1-bucket?location=
+2025-03-11 09:53:55 - logger - INFO - Бакет 'video1-bucket' уже существует.
+2025-03-11 09:53:55 - logger - INFO - Бакет 'video2-bucket' уже существует.
+2025-03-11 09:54:05 - logger - INFO - Видео загружено в MinIO: video1-bucket/video1_0.mp4
+2025-03-11 09:54:06 - logger - INFO - Видео загружено в MinIO: video2-bucket/video2_0.mp4
+2025-03-11 09:54:06 - logger - INFO - Видео video1_0.mp4 загружено из MinIO.
+2025-03-11 09:54:06 - logger - INFO - Снэпшот сохранен как snapshots_video_file_comparison/combined_frame_5000ms.jpg
+2025-03-11 09:54:06 - logger - INFO - Видео 1: Пропущено кадров: 150
+2025-03-11 09:54:06 - logger - INFO - Видео 2: Пропущено кадров: 75
+2025-03-11 09:54:06 - logger - INFO - Снэпшот сохранен как snapshots_search_same_moment/combined_frame_5000ms.jpg
