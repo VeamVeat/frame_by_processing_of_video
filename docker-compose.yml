@@ -36,7 +36,7 @@ services:
   video-processor:
     build:
       context: src/
-      dockerfile: ./services/video_processing/Dockerfile.video_processing
+      dockerfile: ./services/video_processor/Dockerfile.video_processor
     volumes:
       - ./snapshots_video_file_comparison:/app/snapshots_video_file_comparison
       - ./snapshots_search_same_moment:/app/snapshots_search_same_moment

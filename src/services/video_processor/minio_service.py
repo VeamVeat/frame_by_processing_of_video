@@ -23,7 +23,7 @@ class MinioService:
             os.getenv('MINIO_BUCKET_TWO')
         ]
 
-    def create_bucket(self):
+    def create_buckets(self):
         try:
             for bucket in self._bucket_names:
                 if self._minio_client.bucket_exists(bucket):

@@ -91,6 +91,10 @@ class VideoFileComparison:
         os.remove(recorded_file)
 
     def process(self):
+        """
+        Функция, которая по прошествии определенного количества миллисекунд от начала просмотра видео,
+        сопостовляет записанный файл в MinIO с оригинальным файлом
+        """
         recorded_object = self.list_objects_in_bucket(os.getenv('MINIO_BUCKET_ONE'))[0]
 
         # Сравнение видео

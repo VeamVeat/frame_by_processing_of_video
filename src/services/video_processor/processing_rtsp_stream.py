@@ -59,6 +59,12 @@ class ProcessingRTSPStream:
         os.remove(temp_filename)
 
     def process(self):
+        """
+        Запуск потоков для обработки двух RTSP-стримов.
+        При получении кадров по RTSP стриму, эти кадры пересобираются в новые такие же файлы
+        и в потоке их записываются на локальный MinIO.
+        """
+
         rtsp_urls = [
             os.getenv('RTSP_URL_VIDEO_ONE'),
             os.getenv('RTSP_URL_VIDEO_TWO')
