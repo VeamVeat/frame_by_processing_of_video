@@ -40,7 +40,7 @@
 
 `git clone git@github.com:VeamVeat/frame_by_processing_of_video.git`
 
-# Поднимаем все необходимые сервисы
+##  Поднимаем все необходимые сервисы
 `make all`
 
 - Результат работы первой функции будет храниться в папке snapshots_video_file_comparison
