@@ -36,9 +36,9 @@
 `make all`
 
 - Результат работы первой функции будет храниться в папке snapshots_video_file_comparison
-![20250307140023_1 jpg](https://github.com/user-attachments/assets/02e8f999-1b29-47df-8999-96bb42796e8f)
+![combined_frame_5000ms](https://github.com/user-attachments/assets/eaabf312-e43d-45cc-b92f-f294c6d2e3e9)
 
 - Результат работы первой функции будет храниться в папке snapshots_search_same_moment
-![20250307140157_1 jpg](https://github.com/user-attachments/assets/117c4290-c0b9-405e-b9f5-768c045b6d94)
+![combined_frame_5000ms](https://github.com/user-attachments/assets/b96c2efa-0287-4fca-afdc-bc11e46a7212)
 
 -  Результаты работы будут сохранены в логах в папке logs
