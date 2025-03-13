@@ -32,7 +32,7 @@
 
 `git clone git@github.com:VeamVeat/frame_by_processing_of_video.git`
 
-## данной командой поднимутся все необходимые ресурсы
+# Поднимаем все необходимые сервисы
 `make all`
 
 - Результат работы первой функции будет храниться в папке snapshots_video_file_comparison
