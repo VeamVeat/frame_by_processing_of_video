@@ -30,7 +30,7 @@
 ## Настройка и запуск проекта
 Для начала склонируйте репозиторий и установить зависимости
 
-`https://github.com/VeamVeat/frame_by_processing_of_video.git`
+`git clone git@github.com:VeamVeat/frame_by_processing_of_video.git`
 
 ## данной командой поднимутся все необходимые ресурсы
 `make all`
