@@ -43,6 +43,8 @@
 ##  Поднимаем все необходимые сервисы
 `make all`
 
+## Результат работы
+
 - Результат работы первой функции будет храниться в папке snapshots_video_file_comparison
 ![combined_frame_5000ms](https://github.com/user-attachments/assets/eaabf312-e43d-45cc-b92f-f294c6d2e3e9)
 
