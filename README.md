@@ -30,7 +30,7 @@
 ## Настройка и запуск проекта
 Для начала склонируйте репозиторий и установить зависимости
 
-`git clone https://github.com/VeamVeat/line_story_internet_shope_drf.git`
+`https://github.com/VeamVeat/frame_by_processing_of_video.git`
 
 ## данной командой поднимутся все необходимые ресурсы
 `make all`
