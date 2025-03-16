@@ -43,7 +43,7 @@
 Для начала склонируйте репозиторий и установить зависимости
 
 ```Python
-`git clone git@github.com:VeamVeat/frame_by_processing_of_video.git`
+git clone git@github.com:VeamVeat/frame_by_processing_of_video.git
 cd frame_by_processing_of_video
 ```
 
